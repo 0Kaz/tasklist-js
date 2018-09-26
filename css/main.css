@@ -1,19 +1,41 @@
-html, body {
-  background-color: black;
-}
 
 
 .container {
-  background-color:black;
-  color:white;
   display: flex;
-  position:absolute;
-  top:0;
+  position:relative;
+  top:100px;
   left:0;
   height:100%;
   width:100%;
+
 }
 
-.container .row{
-  margin: 0 auto;
+#task {
+  color:white;
+  font-size: 41px;
+}
+
+.col .card-content  {
+  background-color: black;
+  color:white;
+}
+
+.card-action {
+  background-color: black;
+  color: white;
+}
+
+.collection-item {
+  color:black;
+  font-weight: bold;
+}
+
+.clear_task {
+  border-radius: 50%;
+  height: 150px;
+  width: 149px;
+  margin-top: 14px;
+  padding-top: 53px;
+  font-weight: bold;
+  font-size: 30px;
 }

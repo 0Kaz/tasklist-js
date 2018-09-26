@@ -4,10 +4,6 @@ const form = document.querySelector('#task-form');
 const filter = document.querySelector('#filter');
 const taskInput = document.querySelector('#task');
 
-
-loadEventListeners();
-
-
 const loadEventListeners = () => {
   document.addEventListener('DOMContentLoaded', getTasks);
   form.addEventListener('submit', addTask);
@@ -26,14 +22,14 @@ const getTasks = () =>{
   }
 
   tasks.forEach(function(task){
-    const li = document.createElement('li');
+    const span = document.createElement('span');
     li.className = 'collection-item';
     li.appendChild(document.createTextNode(task));
     const link = document.createElement('a');
     link.className = "delete-item secondary-content";
     link.innerHTML = '<i class="fa fa-remove"></i>';
     li.appendChild(link);
-    taskList.appendChild(li);
+    taskList.appendChild(span);
   });
 }
 
@@ -46,7 +42,7 @@ const addTask = (event) =>{
   link.innerHTML = '<i class="fa fa-remove"></i>';
   li.appendChild(link);
   taskList.appendChild(li);
-  storeTaskInLocalStorage();
+  storeTaskInLocalStorage(taskInput.value);
   taskInput.value = '';
   event.preventDefault();
 }
@@ -117,3 +113,6 @@ const removeTaskFromLocalStorage = (taskItem) =>{
 
   localStorage.setItem('tasks',JSON.stringify(tasks));
 }
+
+
+loadEventListeners();
